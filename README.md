@@ -36,7 +36,7 @@ This is a simple Rock Paper Scissors game built using React and styled with Tail
 
 ## Deployment
 
-The game is deployed using Firebase and can be accessed at [[https://your-firebase-project.web.app](https://rock-paper-scissor-8beba.web.app/)](https://your-firebase-project.web.app). To deploy the game to Firebase, follow these steps:
+The game is deployed using Firebase and can be accessed at [https://rock-paper-scissor-8beba.web.app/](https://rock-paper-scissor-8beba.web.app/). To deploy the game to Firebase, follow these steps:
 
 1. Install the Firebase CLI if you haven't already.
    ```bash
