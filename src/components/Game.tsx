@@ -19,7 +19,7 @@ export default function Game( { selectOption }: IGame ) {
   const backgroundColor = isSelected ? 'backgroundComponets' : 'transparent';
 
   return (
-    <div className={`w-[365.75px] h-[235px] flex flex-col justify-around`}>
+    <div className={`w-[365.75px] h-[235px] flex flex-col justify-around max-[366px]:w-full`}>
 
       <div className='w-full flex justify-center'>
         <div

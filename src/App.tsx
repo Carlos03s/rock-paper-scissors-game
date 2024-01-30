@@ -13,31 +13,29 @@ interface IPlayersSelectedOptions {
   img: string
 }
 
+type Winner = 'player1' | 'draw' | 'machine' | '';
+
 function App() {
   const [player1, setPlayer1] = useState<IPlayersSelectedOptions>();
   const [machine, setMachine] = useState<IPlayersSelectedOptions>();
-  const [winner, setWinner] = useState('');
+  const [winner, setWinner] = useState<Winner>('');
   const [score, setScore] = useState(0);
-
 
   const options = ['paper', 'rock', 'scissors'];
   const choosenIndex = Math.floor(Math.random() * options.length);
-  const random = options[choosenIndex];
+  const randomOption = options[choosenIndex];
 
   function processWinner() {
     const playerSelectedOption = player1?.index as number;
     const machinneSelectedOption = machine?.index as number as number;
-    console.log({
-      playerSelectedOption,
-      machinneSelectedOption
-    });
+    const playerWon = playerSelectedOption > machinneSelectedOption;
+    const isDraw = playerSelectedOption === machinneSelectedOption;
 
-
-    if ( playerSelectedOption > machinneSelectedOption) {
-      setWinner('player 1');
+    if ( playerWon ) {
+      setWinner('player1');
       setScore(prevState => prevState + 1);
       setWinner('player1');
-    } else if (playerSelectedOption === machinneSelectedOption) {
+    } else if (isDraw) {
       setWinner('draw');
     } else {
       setWinner('machine');
@@ -53,24 +51,22 @@ function App() {
   useEffect(() => {
     if (!machine) {
       setMachine({
-        option: random,
+        option: randomOption,
         index: choosenIndex,
-        img: random === 'paper' ? paper : random === 'rock' ? rock : scissor
+        img: randomOption === 'paper' ? paper : randomOption === 'rock' ? rock : scissor
       });
     }
-    console.log(machine);
-
   }, [machine]);
 
   useEffect(() => {
     player1 && processWinner();
   }, [player1]);
 
-
   return (
     <div className='bg-default w-full h-screen flex flex-col items-center justify-evenly'>
       <Header
         score={score}
+        winner={winner}
       />
 
       { winner.length > 0 ? <Result
