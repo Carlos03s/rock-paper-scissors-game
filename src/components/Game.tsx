@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable react/react-in-jsx-scope */
+import { useState } from 'react';
 import rock from '../assets/rock.png';
 import scissor from '../assets/scissor.png';
 import paper from '../assets/paper.png';

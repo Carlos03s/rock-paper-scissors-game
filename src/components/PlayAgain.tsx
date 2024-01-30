@@ -1,5 +1,4 @@
-import React from 'react';
-
+/* eslint-disable react/react-in-jsx-scope */
 interface IResult {
   handlePlayAgain(): void;
   winner: string;

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable react/react-in-jsx-scope */
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Game from './components/Game';
 import Result from './components/Result';

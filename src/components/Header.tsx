@@ -1,4 +1,3 @@
-import React from 'react';
 import arrowUp from '../assets/arrowUp.png';
 
 interface IHeader {

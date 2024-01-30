@@ -1,4 +1,3 @@
-import React from 'react';
 import PlayAgain from './PlayAgain';
 
 interface IResult {
