@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayAgain from './result/PlayAgain';
+import PlayAgain from './PlayAgain';
 
 interface IResult {
   player1SelectedOption: string;
